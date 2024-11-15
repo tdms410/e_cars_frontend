@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import ProductSorting from "./ProductSorting";
 import ProductFiltering from "./ProductFiltering";
@@ -29,8 +29,10 @@ function ProductGrid({ category }) {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await fetch("/api/products");
+                const response = await fetch("https://e-cars-backend.onrender.com/api/products/");
                 const data = await response.json();
+                console.log(data,"response");
+                
 
                 setProductData({
                     products: data,
@@ -184,7 +186,7 @@ function ProductGrid({ category }) {
                                 })
                             ) : (
                                 <span className="text-center w-full block mt-5">
-                                    Aucun voitures dans cette gamme de prix.
+                                    Aucune voitures .
                                 </span>
                             )}
                         </ul>
@@ -204,7 +206,7 @@ function ProductGrid({ category }) {
                                     onClick={handleLoadMore}
                                     className="text-black border bg-white font-normal py-2 px-8 mb-8"
                                 >
-                                    voir plus
+                                    voir plus 
                                 </button>
                             )}
                         </div>
