@@ -1,6 +1,8 @@
 import { useState, createContext } from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Clarity from '@microsoft/clarity';
+
 
 import AnnouncementBar from "./components/AnnouncementBar";
 import Header from "./components/Header";
